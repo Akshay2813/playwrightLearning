@@ -4,7 +4,7 @@ pipeline {
         githubPush()
     }
     tools {
-        maven 'Maven3' // Make sure it's configured in Jenkins tools
+        maven 'maven_Akshay_name' // Make sure it's configured in Jenkins tools
     }
     stages {
         stage('Build') {
