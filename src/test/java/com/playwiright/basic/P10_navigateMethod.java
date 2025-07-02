@@ -32,9 +32,7 @@ public class P10_navigateMethod {
         page.goForward();
         //print title
         System.out.println("Title of Page is " + page.title());
-
         Thread.sleep(10000);
-
         page.reload();
         Thread.sleep(10000);
 
