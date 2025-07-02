@@ -1,21 +1,19 @@
 package com.playwiright.basic;
 
-import com.microsoft.playwright.*;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
-
-public class P6_LaunchInEdgeBrowser {
+public class P9_LaunchInEdgeBrowser_EasyWay {
     public static void main(String[] args) {
         //Create Playwright Instance
         Playwright playwright = Playwright.create();
-
+        
         //Launch Browser without headless mode
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().
-                setHeadless(false).
-                setExecutablePath(Paths.get("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe")));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").
+                setHeadless(false));
 
         //From Browser create Page object
         Page page = browser.newPage();

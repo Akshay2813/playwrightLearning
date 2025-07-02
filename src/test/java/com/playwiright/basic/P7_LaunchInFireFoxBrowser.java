@@ -12,16 +12,12 @@ public class P7_LaunchInFireFoxBrowser {
         //Create Playwright Instance
         Playwright playwright = Playwright.create();
 
-        List<String> arguments = new ArrayList<>();
-        arguments.add("--start-maximized");
-
         //Launch Browser without headless mode
         Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().
-                setHeadless(false).setArgs(arguments));
+                setHeadless(false));
 
-        BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         //From Browser create Page object
-        Page page = browserContext.newPage();
+        Page page = browser.newPage();
 
         //Navigate to URL
 
